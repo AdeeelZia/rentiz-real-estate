@@ -1,26 +1,30 @@
-import Button from "../common/Button";
+import React from "react";
 import Heading from "../common/Heading";
+import Button from "../common/Button";
+import home from "../../assets/image/binyamin-mellish-.jpg";
 
-// Reusable Dropdown Component
-const SearchDropdown = ({
-  label,
-  options,
-}: {
+interface SearchDropdownProps {
   label: string;
   options: string[];
-}) => (
+}
+
+const SearchDropdown: React.FC<SearchDropdownProps> = ({ label, options }) => (
   <div className="flex-1 border-b md:border-b-0 md:border-r border-gray-200 p-4">
     <p className="text-sm text-gray-500 mb-1">{label}</p>
-    <select className="w-full font-semibold text-gray-800 bg-white focus:outline-none">
+    <select
+      aria-label={label}
+      className="w-full font-semibold text-gray-800 bg-white focus:outline-none"
+    >
       {options.map((option) => (
-        <option key={option}>{option}</option>
+        <option key={option} value={option}>
+          {option}
+        </option>
       ))}
     </select>
   </div>
 );
 
-// Search Bar Component
-const HeroSearchBar = () => {
+const HeroSearchBar: React.FC = () => {
   return (
     <div className="w-full max-w-[50rem] bg-white rounded-md shadow-md overflow-hidden flex flex-col md:flex-row">
       <SearchDropdown label="Purpose" options={["Buy", "Rent", "Sell"]} />
@@ -43,12 +47,10 @@ const HeroSearchBar = () => {
   );
 };
 
-// Hero Section Component
-const HeroSection = () => {
+const HeroSection: React.FC = () => {
   return (
     <div className="rt-container py-12">
       <div className="flex flex-col lg:flex-row items-center gap-10">
-        {/* Left Content */}
         <div className="flex-1">
           <Heading
             level={1}
@@ -64,15 +66,11 @@ const HeroSection = () => {
             <HeroSearchBar />
           </div>
         </div>
-
-        {/* Right Image */}
         <div className="flex-1">
           <img
-            src="/image/card-img.jfif"
+            src={home}
             alt="Home search illustration"
-            width={700}
-            height={645}
-            className="object-cover w-full h-auto max-w-full rounded-md"
+            className="object-cover w-full h-auto max-w-full"
           />
         </div>
       </div>

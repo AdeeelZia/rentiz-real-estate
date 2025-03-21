@@ -1,14 +1,14 @@
-import Card from "../../components/home/Card";
+import HeroSection from "../../components/home/HeroSection";
 import Feature from "../../components/home/Feature";
-import PropertyListing from "../../components/home/PopularResidence";
 import WhyChooseUs from "../../components/home/WhyChooseUs";
 import HelpPeople from "../../components/home/HelpPeople";
 import BeginSection from "../../components/home/BeginSection";
+import PropertyListing from "../../components/home/PropertyListing";
 
 export default function Home() {
   return (
     <>
-      <Card />
+      <HeroSection />
       <Feature />
       <PropertyListing />
       <WhyChooseUs />

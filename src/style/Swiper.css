@@ -1,0 +1,30 @@
+/* Swiper container styling */
+.swiper-container {
+  width: 100%;
+  height: 300px;
+  margin: 0 auto;
+}
+
+/* Slide content styling */
+.swiper-slide-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  font-size: 20px;
+  color: #333;
+  height: 100%;
+}
+
+/* Custom navigation styling (optional) */
+.swiper-button-next, .swiper-button-prev {
+  color: #333;
+  font-size: 20px;
+}
+
+/* Custom pagination (optional) */
+.swiper-pagination-bullet {
+  background: #333;
+}
+

@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import Heading from "../common/Heading";
+import facebook from "../../assets/favicon/facebook.svg";
+import instagram from "../../assets/favicon/instagram.svg";
+import twitter from "../../assets/favicon/Twitter.svg";
+import youtube from "../../assets/favicon/youtube.svg";
 
 const footerLinks = [
   { label: "Houses", url: "/houses" },
@@ -16,12 +20,7 @@ const footerLinks = [
   { label: "FAQs", url: "/faq" },
 ];
 
-const socialIcons = [
-  "/favicon/footer/facebook.svg",
-  "/favicon/footer/instagram.svg",
-  "/favicon/footer/twitter.svg",
-  "/favicon/footer/youtube.svg",
-];
+const socialIcons = [facebook, instagram, twitter, youtube];
 
 const FooterLinksSection = ({ title, links }: any) => (
   <div className="text-[#ffffff] py-4">

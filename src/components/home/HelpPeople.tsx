@@ -1,16 +1,12 @@
-import Button from "../common/Button";
 import Heading from "../common/Heading";
+import Button from "../common/Button";
+import home1 from "../../assets/image/find-home1.jpg"
+import home2 from "../../assets/image/find-home2.jpg"
 
 export default function HeroSection() {
   const images = [
-    {
-      src: "/image/image1.jpg",
-      alt: "Modern building exterior",
-    },
-    {
-      src: "/image/image2.jpg",
-      alt: "Modern interior living space",
-    },
+    {src: home1, alt: "Modern building exterior"},
+    {src: home2, alt: "Modern interior living space"},
   ];
 
   return (
