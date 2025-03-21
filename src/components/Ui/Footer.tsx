@@ -41,7 +41,7 @@ const FooterLinksSection = ({ title, links }: any) => (
 );
 
 const Footer = () => (
-  <footer>
+  <footer className="bg-[#1A242F]">
     <div className="rt-container lg:flex">
       <div className="lg:w-2/5">
         <div className="text-[#ffffff]">
@@ -82,7 +82,7 @@ const Footer = () => (
 
     <div className="w-full border border-[#303A44]"></div>
 
-    <div className="footer-Description h-12 p-4 flex flex-col justify-center md:flex-row md:justify-between items-center text-white">
+    <div className="rt-container h-12 p-4 flex flex-col justify-center md:flex-row md:justify-between items-center text-white">
       <p className="text-[.65rem] sm:text-sm font-normal leading-5">
         Copyright ©TemplatesJungle. 2022. All right reserved
       </p>

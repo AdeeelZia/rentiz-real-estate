@@ -1,48 +1,69 @@
-export default function HeroSection() {
-  return (
-    <div className="w-full bg-[#0d1117] py-12 px-4 md:px-8 border-b border-[#1e2738]">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8">
-        {/* Left side - Images */}
-        <div className="flex gap-2 md:w-1/2">
-          <div className="w-1/2">
-            <img
-              src="/building-exterior.png"
-              width={300}
-              height={400}
-              alt="Modern building exterior"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="w-1/2">
-            <img
-              src="/interior-living.png"
-              width={300}
-              height={400}
-              alt="Modern interior living space"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
+import Button from "../common/Button";
+import Heading from "../common/Heading";
 
-        {/* Right side - Text content */}
+export default function HeroSection() {
+  const images = [
+    {
+      src: "/image/image1.jpg",
+      alt: "Modern building exterior",
+    },
+    {
+      src: "/image/image2.jpg",
+      alt: "Modern interior living space",
+    },
+  ];
+
+  return (
+    <section
+      className="relative w-full bg-[#0d1117] py-12 px-4 md:px-8"
+      style={{
+        background:
+          "linear-gradient(270deg, #1A242F 0.01%, rgba(26, 36, 47, 0) 82.97%)",
+      }}
+    >
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8">
+        <div className="flex gap-2 md:w-1/2">
+          {images.map((image, index) => (
+            <div className="w-1/2" key={index}>
+              <img
+                src={image.src}
+                alt={image.alt}
+                width={300}
+                height={400}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
         <div className="md:w-1/2 flex flex-col justify-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            We Help People To Find Homes
-          </h2>
+          <Heading
+            level={2}
+            text="We Help People To Find Homes"
+            customHeadingStyle="!text-3xl !font-bold !text-white !mb-4"
+          />
           <p className="text-sm text-gray-400 mb-6">
-            Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
-            consectetur. Neque porro quisquam est qui dolorem ipsum quia dolor
-            sit amet, consectetur adipisci velit. Nemo enim ipsam voluptatem
-            quia voluptas sit aspernatur aut odit aut fugit, sed quia
-            consequuntur.
+            Mauris orci donec blandit maecenas. Orci lorem purus porttitor massa
+            consectetur. Neque, vestibulum sed varius magna et at. Eu,
+            adipiscing morbi augue justo. Nibh laoreet volutpat quis velit.
+            Blandit aliquam donec sed morbi congue eget lorem viverra porta id
+            lobortis.
           </p>
-          <div>
-            <button className="bg-[#00b894] hover:bg-[#00a382] text-white py-2 px-6 rounded">
-              Get in Touch
-            </button>
-          </div>
+          <Button
+            type="button"
+            text="Get in Touch"
+            customButtonStyle="!bg-[#00b894] !text-white !py-2 !px-6 !rounded"
+          />
         </div>
       </div>
-    </div>
+      {/* Additional decorative elements for the right side */}
+      <div className="absolute -bottom-28 right-0">
+        <img
+          src="/image/box-pattern.png"
+          alt="box-pattern"
+          className="w-[60px] h-[182px]"
+        />
+      </div>
+    </section>
   );
 }
