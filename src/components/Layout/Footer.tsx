@@ -22,28 +22,34 @@ const footerLinks = [
 
 const socialIcons = [facebook, instagram, twitter, youtube];
 
-const FooterLinksSection = ({ title, links }: any) => (
-  <div className="text-[#ffffff] py-4">
-    <div className="text-lg font-bold">{title}</div>
+interface FooterLinksSection {
+  title: string;
+  links: any;
+}
+
+const FooterLinksSection: React.FC<FooterLinksSection> = ({ title, links }) => (
+  <section className="text-white py-4">
+    <h2 className="text-lg font-bold">{title}</h2>
     <ul>
       {links.map((item: any, index: any) => (
         <li key={index}>
-          <div className="flex items-center gap-x-2 py-1">
-            <Link className="text-sm font-medium text-[#D6D6D6]" to={item.url}>
-              {item.label}
-            </Link>
-          </div>
+          <Link
+            to={item.url}
+            className="block py-1 text-sm font-medium text-[#D6D6D6]"
+          >
+            {item.label}
+          </Link>
         </li>
       ))}
     </ul>
-  </div>
+  </section>
 );
 
-const Footer = () => (
-  <footer className="bg-[#1A242F]">
-    <div className="rt-container lg:flex">
-      <div className="lg:w-2/5">
-        <div className="text-[#ffffff]">
+const Footer = () => {
+  return (
+    <footer className="bg-[#1A242F]">
+      <div className="rt-container lg:flex">
+        <section className="lg:w-2/5 text-white">
           <Heading
             level={1}
             text="Rentiz"
@@ -53,46 +59,42 @@ const Footer = () => (
             Neque, vestibulum sed varius magna et at. Eu, adipiscing morbi
             augue.
           </p>
-        </div>
+          <nav
+            className="flex gap-x-4 justify-center lg:justify-start"
+            aria-label="Social Media"
+          >
+            {socialIcons.map((icon, index) => (
+              <a key={index} href="#" aria-label={`social-icon-${index}`}>
+                <img
+                  src={icon}
+                  width={20}
+                  height={20}
+                  alt={`social-icon-${index}`}
+                />
+              </a>
+            ))}
+          </nav>
+        </section>
 
-        <div className="Social_Links flex gap-x-4 justify-center lg:justify-start">
-          {socialIcons.map((icon, index) => (
-            <img
-              width={20}
-              height={20}
-              key={index}
-              src={icon}
-              alt={`social-icon-${index}`}
-            />
-          ))}
-        </div>
+        <nav
+          className="py-4 sm:flex justify-around lg:w-[60%]"
+          aria-label="Footer Navigation"
+        >
+          <FooterLinksSection title="Project" links={footerLinks.slice(0, 4)} />
+          <FooterLinksSection title="Company" links={footerLinks.slice(4, 7)} />
+          <FooterLinksSection title="Movement" links={footerLinks.slice(5, 7)} />
+          <FooterLinksSection title="Help" links={footerLinks.slice(5, 9)} />
+        </nav>
       </div>
 
-      <div className="Links py-4 sm:flex justify-around lg:w-[60%]">
-        <FooterLinksSection title="Project" links={footerLinks.slice(0, 4)} />
+      <hr className="border-[#303A44]" />
 
-        <FooterLinksSection title="Company" links={footerLinks.slice(4, 7)} />
-
-        <FooterLinksSection title="Movement" links={footerLinks.slice(5, 7)} />
-
-        <FooterLinksSection title="Help" links={footerLinks.slice(5, 9)} />
+      <div className="rt-container h-12 p-4 flex flex-col md:flex-row md:justify-between items-center text-white text-[.65rem] sm:text-sm font-normal leading-5">
+        <p>Copyright © TemplatesJungle. 2022. All rights reserved.</p>
+        <p>Design by:<span className="underline text-[.80rem] lg:text-lg">TemplatesJungle</span></p>
       </div>
-    </div>
-
-    <div className="w-full border border-[#303A44]"></div>
-
-    <div className="rt-container h-12 p-4 flex flex-col justify-center md:flex-row md:justify-between items-center text-white">
-      <p className="text-[.65rem] sm:text-sm font-normal leading-5">
-        Copyright ©TemplatesJungle. 2022. All right reserved
-      </p>
-      <p className="text-[.65rem] sm:text-sm font-normal leading-5">
-        Design by:
-        <span className="text-[.80rem] lg:text-lg underline">
-          TemplatesJungle
-        </span>
-      </p>
-    </div>
-  </footer>
-);
+    </footer>
+  );
+};
 
 export default Footer;

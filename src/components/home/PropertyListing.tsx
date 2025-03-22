@@ -3,8 +3,6 @@ import popular2 from "../../assets/image/popular2.jpg";
 import popular3 from "../../assets/image/popular3.jpg";
 import Button from "../common/Button";
 import PropertyCard from "./PropertyCard";
-import SwiperComponent from "./SwiperComponent";
-import { SwiperSlide } from "swiper/react";
 
 export default function PropertyListing() {
   const properties = [
@@ -50,13 +48,9 @@ export default function PropertyListing() {
 
         <div className="relative">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <SwiperComponent>
-              {properties.map((property) => (
-                <SwiperSlide key={property.id}>
-                  <PropertyCard property={property} />
-                </SwiperSlide>
-              ))}
-            </SwiperComponent>
+            {properties.map((property) => (
+              <PropertyCard property={property} />
+            ))}
           </div>
         </div>
 
