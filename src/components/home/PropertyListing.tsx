@@ -1,16 +1,22 @@
-import popular1 from "../../assets/image/popular1.jpg";
-import popular2 from "../../assets/image/popular2.jpg";
-import popular3 from "../../assets/image/popular3.jpg";
 import Button from "../common/Button";
-import PropertyCard from "./PropertyCard";
+import Heading from "../common/Heading";
+interface Property {
+  id: number;
+  name: string;
+  address: string;
+  image: string;
+  beds: number;
+  baths: number;
+  sqft: number;
+}
 
-export default function PropertyListing() {
-  const properties = [
+function PropertyListing() {
+  const properties: Property[] = [
     {
       id: 1,
       name: "Aliva Priva Jalvin",
       address: "1087 Pin Oak Drive, Clinton, USA",
-      image: popular1,
+      image: "..//image/popular1.jpg",
       beds: 4,
       baths: 2,
       sqft: 1203,
@@ -19,7 +25,7 @@ export default function PropertyListing() {
       id: 2,
       name: "Hard Line Orchar",
       address: "1087 Pin Oak Drive, Clinton, USA",
-      image: popular2,
+      image: "..//image/popular2.jpg",
       beds: 4,
       baths: 2,
       sqft: 1203,
@@ -28,30 +34,66 @@ export default function PropertyListing() {
       id: 3,
       name: "Alpline Lenevote",
       address: "1087 Pin Oak Drive, Clinton, USA",
-      image: popular3,
+      image: "..//image/popular3.jpg",
       beds: 4,
       baths: 2,
       sqft: 1203,
     },
   ];
 
-  return (
-    <div className="w-full min-h-screen bg-[#1a2536] flex items-center justify-center p-6 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <img src="/image/background.png" alt="Background" />
-      </div>
-
-      <div className="max-w-6xl w-full z-10">
-        <h2 className="text-white text-3xl font-semibold mb-8">
-          Popular Residence
-        </h2>
-
-        <div className="relative">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {properties.map((property) => (
-              <PropertyCard property={property} />
-            ))}
+  function PropertyCard({ property }: { property: Property }) {
+    return (
+      <div className="bg-transparent">
+        <div className="overflow-hidden">
+          <img
+            src={property.image || "/placeholder.svg"}
+            alt={property.name}
+            width={460}
+            height={353}
+            className="w-full h-[200px] object-cover"
+          />
+        </div>
+        <div className="mt-3">
+          <h3 className="text-white font-medium text-lg">{property.name}</h3>
+          <p className="text-gray-400 text-sm">{property.address}</p>
+          <div className="flex items-center gap-4 mt-2">
+            <div className="flex items-center gap-1">
+              <img src="../..//favicon/bed.svg" alt="bed" />
+              <span className="text-gray-300 text-sm">
+                {property.beds} Beds
+              </span>
+            </div>
+            <div className="flex items-center gap-1">
+              <img src="../..//favicon/bath.svg" alt="bath" />
+              <span className="text-gray-300 text-sm">
+                {property.baths} Bath
+              </span>
+            </div>
+            <div className="flex items-center gap-1">
+              <img src="../..//favicon/square.svg" alt="square" />
+              <span className="text-gray-300 text-sm">
+                {property.sqft} sqft.
+              </span>
+            </div>
           </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="w-full min-h-full bg-[#1a2536] flex items-center justify-center p-6 relative overflow-hidden">
+      <div className="container mx-auto sm:px-8 lg:px-16 max-w-6xl w-full z-10">
+        <Heading
+          level={2}
+          text="Popular Residence"
+          customHeadingStyle="!text-white !text-3xl !font-semibold !mb-8"
+        />
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {properties.map((property) => (
+            <PropertyCard key={property.id} property={property} />
+          ))}
         </div>
 
         <div className="flex justify-center mt-8">
@@ -65,3 +107,5 @@ export default function PropertyListing() {
     </div>
   );
 }
+
+export default PropertyListing;

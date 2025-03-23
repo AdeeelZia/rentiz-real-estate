@@ -1,7 +1,5 @@
-import React from "react";
 import Heading from "../common/Heading";
 import Button from "../common/Button";
-import home from "../../assets/image/binyamin-mellish-.jpg";
 
 interface SearchDropdownProps {
   label: string;
@@ -40,7 +38,7 @@ const HeroSearchBar: React.FC = () => {
         <Button
           type="button"
           text="Search"
-          customButtonStyle="px-10 py-3 md:py-0 !bg-[#1AA090] w-full md:w-auto"
+          customButtonStyle="px-10 py-3 !bg-[#1AA090] w-full md:w-auto"
         />
       </div>
     </div>
@@ -49,7 +47,7 @@ const HeroSearchBar: React.FC = () => {
 
 const HeroSection: React.FC = () => {
   return (
-    <div className="rt-container py-12">
+    <div className="container mx-auto p-4 sm:px-8 lg:px-16 py-12">
       <div className="flex flex-col lg:flex-row items-center gap-10">
         <div className="flex-1">
           <Heading
@@ -68,7 +66,7 @@ const HeroSection: React.FC = () => {
         </div>
         <div className="flex-1">
           <img
-            src={home}
+            src="..//image/mellish.jpg"
             alt="Home search illustration"
             className="object-cover w-full h-auto max-w-full"
           />

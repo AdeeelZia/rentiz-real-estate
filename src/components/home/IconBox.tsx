@@ -10,13 +10,13 @@ const IconBox: React.FC<IconBox> = ({ icon, title, description }) => {
     <div className="flex flex-col items-center text-center">
       <div className="bg-[#0e2a2a] rounded-full p-6 mb-6 w-32 h-32 flex items-center justify-center">
         <img src={icon} alt={icon} width={72} height={72} />
-        </div>
+      </div>
       <Heading
-        level={3}
+        level={4}
         text={title}
-        customHeadingStyle="text-lg lg:!text-[1.625rem] !text-center mb-3"
+        customHeadingStyle="text-lg lg:!text-xl !text-center mb-3"
       />
-      <p className="text-sm lg:text-lg text-center text-[#D6D6D6]">
+      <p className="text-sm lg:text-base text-center text-[#D6D6D6]">
         {description}
       </p>
     </div>

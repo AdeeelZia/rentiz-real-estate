@@ -1,12 +1,10 @@
 import Heading from "../common/Heading";
 import Button from "../common/Button";
-import home1 from "../../assets/image/find-home1.jpg"
-import home2 from "../../assets/image/find-home2.jpg"
 
 export default function HeroSection() {
   const images = [
-    {src: home1, alt: "Modern building exterior"},
-    {src: home2, alt: "Modern interior living space"},
+    { src: "../..//image/find-home1.jpg", alt: "Modern building exterior" },
+    { src: "../..//image/find-home2.jpg", alt: "Modern interior living space" },
   ];
 
   return (
@@ -17,16 +15,14 @@ export default function HeroSection() {
           "linear-gradient(270deg, #1A242F 0.01%, rgba(26, 36, 47, 0) 82.97%)",
       }}
     >
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8">
+      <div className="container mx-auto p-4 sm:px-8 lg:px-16 flex flex-col md:flex-row gap-8">
         <div className="flex gap-2 md:w-1/2">
           {images.map((image, index) => (
             <div className="w-1/2" key={index}>
               <img
                 src={image.src}
                 alt={image.alt}
-                width={300}
-                height={400}
-                className="w-full h-full object-cover"
+                className="w-full h-full max-w-[21.875rem] max-h-[34.438rem] object-cover"
                 loading="lazy"
               />
             </div>
@@ -36,9 +32,9 @@ export default function HeroSection() {
           <Heading
             level={2}
             text="We Help People To Find Homes"
-            customHeadingStyle="!text-3xl !font-bold !text-white !mb-4"
+            customHeadingStyle="!text-3xl lg:!text-5xl !max-w-md !text-white !mb-4"
           />
-          <p className="text-sm text-gray-400 mb-6">
+          <p className="text-sm lg:text-base text-gray-400 mb-6">
             Mauris orci donec blandit maecenas. Orci lorem purus porttitor massa
             consectetur. Neque, vestibulum sed varius magna et at. Eu,
             adipiscing morbi augue justo. Nibh laoreet volutpat quis velit.
@@ -48,17 +44,9 @@ export default function HeroSection() {
           <Button
             type="button"
             text="Get in Touch"
-            customButtonStyle="!bg-[#00b894] !text-white !py-2 !px-6 !rounded"
+            customButtonStyle="py-3 px-6 max-w-fit !text-white !bg-[#00b894]"
           />
         </div>
-      </div>
-      {/* Additional decorative elements for the right side */}
-      <div className="absolute -bottom-28 right-0">
-        <img
-          src="/image/box-pattern.png"
-          alt="box-pattern"
-          className="w-[60px] h-[182px]"
-        />
       </div>
     </section>
   );

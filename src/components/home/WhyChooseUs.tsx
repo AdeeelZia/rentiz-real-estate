@@ -1,28 +1,26 @@
+import Heading from "../common/Heading";
 import IconBox from "./IconBox";
 import Testimonial from "./Testimonial";
-import loupe from "../../assets/favicon/loupe.svg";
-import tag from "../../assets/favicon/tag.svg";
-import quick from "../../assets/favicon/quick.svg";
 
 const WhyChooseUs = () => {
   const iconData = [
     {
       id: 1,
-      icon: loupe,
+      icon: "../..//favicon/loupe.svg",
       title: "Easy To Find",
       description:
         "Urna, massa aliquet dui pellentesque. Ac, gravida in. Diam vitae, nec mattis lectus quam pretium amet facilisis.",
     },
     {
       id: 2,
-      icon: tag,
+      icon: "../..//favicon/tag.svg",
       title: "Affordable Prices",
       description:
         "Urna, massa aliquet dui pellentesque. Ac, gravida in. Diam vitae, nec mattis lectus quam pretium amet facilisis.",
     },
     {
       id: 3,
-      icon: quick,
+      icon: "../..//favicon/quick.svg",
       title: "Quickly Process",
       description:
         "Ac, gravida in. Diam vitae, nec mattis lectus quam pretium amet facilisis. Urna, massa aliquet dui pellentesque.",
@@ -31,28 +29,12 @@ const WhyChooseUs = () => {
 
   return (
     <div className="bg-[#0d1117] text-white py-16 relative overflow-hidden">
-      <div className="absolute left-0 top-1/2 -translate-y-1/2">
-        <svg
-          width="120"
-          height="300"
-          viewBox="0 0 120 300"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0 150L80 80M0 200L120 80"
-            stroke="#1cd6c9"
-            strokeWidth="2"
-            opacity="0.5"
-          />
-        </svg>
-      </div>
-
-      <div className="container mx-auto px-4 max-w-6xl">
-        <h2 className="text-3xl font-bold text-center mb-16">
-          Why To Choose Us
-        </h2>
-
+      <div className="container mx-auto p-4 sm:px-8 lg:px-16 max-w-6xl">
+        <Heading
+          level={2}
+          text="Why To Choose Us"
+          customHeadingStyle="!text-3xl !text-center !mb-16"
+        />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           {iconData.map((data) => (
             <IconBox

@@ -19,15 +19,25 @@ export default function Navbar() {
   };
 
   return (
-    <header className="rt-container">
+    <header className="container mx-auto p-4 sm:px-8 lg:px-16">
       <nav className="flex justify-between items-center">
-        <Link to={"/"}>
-          <Heading
-            level={1}
-            text="Rentiz"
-            customHeadingStyle="lg:!text-[36px]"
-          />
+        <Link to={"/"} className="relative inline-flex items-center">
+          <div className="relative">
+            <Heading
+              level={1}
+              text="Rentiz"
+              customHeadingStyle="lg:!text-[36px] text-white font-bold relative z-50"
+            />
+            <img
+              src="../image/Rectangle.png"
+              alt="rectangle-icon"
+              width={32}
+              height={32}
+              className="absolute top-5 left-0 -translate-x-1/2 -translate-y-1/2"
+            />
+          </div>
         </Link>
+
         <div className="hidden lg:flex lg:items-center lg:justify-between lg:flex-1">
           <ul className="flex flex-grow justify-center space-x-8">
             {NavLinks.map((item, i) => (
@@ -36,8 +46,8 @@ export default function Navbar() {
                   to={item.Path}
                   className={({ isActive }) =>
                     isActive
-                      ? "text-[13px] font-semibold uppercase leading-[19.5px] text-white underline-offset-4 underline decoration-[#1AA090] decoration-2"
-                      : "text-[13px] font-semibold uppercase leading-[19.5px] text-white underline-offset-4 decoration-2 decoration-[#1AA090] hover:underline"
+                      ? "text-[13px] font-semibold leading-[19.5px] text-white underline-offset-4 underline decoration-[#1AA090] decoration-2"
+                      : "text-[13px] font-semibold leading-[19.5px] text-white underline-offset-4 decoration-2 decoration-[#1AA090] hover:underline"
                   }
                 >
                   {item.NavTxt}
@@ -88,8 +98,8 @@ export default function Navbar() {
                 to={item.Path}
                 className={({ isActive }) =>
                   isActive
-                    ? "text-[13px] font-semibold uppercase leading-[19.5px] text-white px-3 py-2 rounded-md underline-offset-4 underline decoration-2 decoration-[#1AA090]"
-                    : "text-[13px] font-semibold uppercase leading-[19.5px] text-white underline-offset-4 decoration-2 hover:underline decoration-[#1AA090] px-3 py-2 rounded-md"
+                    ? "text-[13px] font-semibold leading-[19.5px] text-white px-3 py-2 rounded-md underline-offset-4 underline decoration-2 decoration-[#1AA090]"
+                    : "text-[13px] font-semibold leading-[19.5px] text-white underline-offset-4 decoration-2 hover:underline decoration-[#1AA090] px-3 py-2 rounded-md"
                 }
               >
                 {item.NavTxt}

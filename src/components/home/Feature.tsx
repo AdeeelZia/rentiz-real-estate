@@ -1,15 +1,16 @@
 import Heading from "../common/Heading";
-import logo1 from "../../assets/favicon/logo1.svg";
-import logo2 from "../../assets/favicon/logo2.svg";
-import logo3 from "../../assets/favicon/logo3.svg";
-import logo4 from "../../assets/favicon/logo4.svg";
-import logo5 from "../../assets/favicon/logo5.svg";
 
-const featureIcons = [logo1, logo2, logo3, logo4, logo5];
+const featureIcons = [
+  "../..//favicon/logo1.svg",
+  "../..//favicon/logo2.svg",
+  "../..//favicon/logo3.svg",
+  "../..//favicon/logo4.svg",
+  "../..//favicon/logo5.svg",
+];
 
 const Feature: React.FC = () => {
   return (
-    <div className="rt-container py-8">
+    <div className="container mx-auto p-4 sm:px-8 lg:px-16 py-8">
       <Heading
         level={2}
         text="Featured In"

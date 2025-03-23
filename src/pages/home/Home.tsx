@@ -1,4 +1,3 @@
-// Importing necessary components for the Home page
 import HeroSection from "../../components/home/HeroSection";
 import Feature from "../../components/home/Feature";
 import WhyChooseUs from "../../components/home/WhyChooseUs";
